@@ -37,22 +37,6 @@ public class standalone {
         
         try {
             WebDriver driver = new RemoteWebDriver(new URL("http://192.168.100.177:4444"), chromeOptions);
-            driver.get("https://accounts.lambdatest.com/login");
-            driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("aayushis@lambdatest.com");
-            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("123456");
-            driver.findElement(By.xpath("//*[@id=\"login-button\"]")).click();
-
-            // Open the signup page
-            driver.get("https://accounts.lambdatest.com/register");
-            driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("aayushis@lambdatest.com");
-
-            driver.findElement(By.xpath("//*[@id=\"userpassword\"]")).sendKeys("123456");
-            driver.findElement(By.xpath("//*[@id=\"app\"]")).click();
-            driver.get("https://www.instagram.com/accounts/login/?hl=en");
-            driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div/div[1]/div/label/input")).sendKeys("aayushis@lambdatest.com");
-
-
-
             System.out.println("Page title is: " + driver.getTitle());
             Thread.sleep(10000);
             driver.quit();
