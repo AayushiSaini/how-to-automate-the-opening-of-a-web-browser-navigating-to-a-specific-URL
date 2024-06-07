@@ -1,0 +1,26 @@
+package org.example;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.net.URL;
+
+public class standalone {
+    public static void main(String[] args) {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setCapability("platformName", "windows");
+        
+        try {
+            WebDriver driver = new RemoteWebDriver(new URL("http://192.168.100.186:4444" ), chromeOptions);
+            driver.get("https://accounts.lambdatest.com/login");
+            System.out.println("Page title is: " + driver.getTitle());
+            Thread.sleep(10000);
+            driver.quit();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+}
